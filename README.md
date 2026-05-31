@@ -1,5 +1,5 @@
 
-# 🚀 QaBrainsAutomationPlaywright
+# 🚀 QaBrainsAutomationPlaywrightJava
 
 A robust End-to-End Test Automation Framework built using **Playwright + Java + Cucumber BDD + TestNG + Maven** for scalable UI automation testing.
 
