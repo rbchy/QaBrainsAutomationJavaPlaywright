@@ -118,7 +118,10 @@ public class ShopSteps {
     private String clickMenuItem(String label) {
         Locator item = page().locator("[role='menuitem']", new Page.LocatorOptions().setHasText(label))
                 .or(page().locator("a", new Page.LocatorOptions().setHasText(label))).first();
-        if (item.count() == 0) {
+        try {
+            // the sidebar is rendered client-side: wait for it instead of checking count() immediately
+            item.waitFor(new Locator.WaitForOptions().setTimeout(15000));
+        } catch (Exception notRendered) {
             return null;
         }
         String start = page().url();
