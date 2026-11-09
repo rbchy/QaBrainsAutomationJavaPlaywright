@@ -1,486 +1,262 @@
-# QA Brains Automation — Java + Playwright + Cucumber
+<div align="center">
 
-![Java](https://img.shields.io/badge/Java-11+-orange?logo=java)
-![Playwright](https://img.shields.io/badge/Playwright-1.53-green?logo=playwright)
-![Cucumber](https://img.shields.io/badge/Cucumber-BDD-brightgreen?logo=cucumber)
-![TestNG](https://img.shields.io/badge/TestNG-Runner-red)
-![Maven](https://img.shields.io/badge/Maven-Build-C71A36?logo=apache-maven)
-![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?logo=jenkins)
-![Allure](https://img.shields.io/badge/Allure-Reports-yellow)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+# 🎭 QA Brains Automation — Java + Playwright
 
-**Author:** Ranajit Baran Chowdhury — Software Developer & QA Automation Engineer
-**Email:** chyranajit@gmail.com
-**GitHub:** [@ranajitchowdhury](https://github.com/ranajitchowdhury)
+### Cucumber BDD suite on Playwright for Java — login, registration, password reset, e-commerce cart, navigation
 
-An enterprise-grade **BDD test automation framework** built with **Java**, **Playwright**, and **Cucumber** — following industry-standard design patterns including Page Object Model, Hooks-based lifecycle management, and CI/CD-ready pipeline integration.
+[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&size=18&pause=1500&color=FFC107&center=true&vCenter=true&width=900&repeat=true&lines=Java+17+%C2%B7+Playwright+1.53+%C2%B7+Cucumber+7+%C2%B7+TestNG+%C2%B7+Maven;Auto-waiting+locators+%C2%B7+full-page+screenshots+on+failure;15+%2F+15+scenarios+in+86+s+on+GitHub+Actions)](https://git.io/typing-svg)
+
+<!-- ============ STATUS BAR ============ -->
+[![Tests](https://github.com/rbchy/QaBrainsAutomationJavaPlaywright/actions/workflows/tests.yml/badge.svg)](https://github.com/rbchy/QaBrainsAutomationJavaPlaywright/actions/workflows/tests.yml)
+![Pass Rate](https://img.shields.io/badge/Pass%20Rate-100%25%20(15%2F15)-22c55e?style=for-the-badge&logo=checkmarx&logoColor=white)
+![Target](https://img.shields.io/badge/Target-practice.qabrains.com-1e3a8a?style=for-the-badge&logo=googlechrome&logoColor=white)
+
+![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-1.53-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
+![Cucumber](https://img.shields.io/badge/Cucumber-7.15-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
+![TestNG](https://img.shields.io/badge/TestNG-7.9-FF7F00?style=for-the-badge)
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
+
+![Last Commit](https://img.shields.io/github/last-commit/rbchy/QaBrainsAutomationJavaPlaywright?style=flat-square&color=0d9488&label=Last%20commit)
+![Repo Size](https://img.shields.io/github/repo-size/rbchy/QaBrainsAutomationJavaPlaywright?style=flat-square&color=155e75&label=Repo%20size)
+
+</div>
 
 ---
 
-## 📋 Tech Stack
+## 📌 At a Glance
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Language** | Java 11+ | Core automation logic |
-| **Browser Automation** | Playwright for Java | Fast, reliable cross-browser control |
-| **BDD Framework** | Cucumber (Gherkin) | Human-readable test scenarios |
-| **Test Runner** | TestNG | Execution, grouping, parallel runs |
-| **Build Tool** | Maven | Dependency management |
-| **CI/CD** | Jenkins / GitHub Actions / AWS Pipeline | Automated build and execution |
-| **Reporting** | Allure Reports + Cucumber HTML | Rich, interactive test reports |
-| **Design Pattern** | Page Object Model (POM) | Maintainable UI abstraction layer |
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**🙋 What this is**
+
+The **Playwright for Java** edition of the QA Brains practice-site suite: user authentication (login, logout, registration, forgot password), the **e-commerce demo** (shop login, add / remove to cart, product details, product cards) and the sidebar demo modules — in plain-English Gherkin, backed by Page Objects and run by TestNG.
+
+Playwright's **auto-waiting locators** replace hand-written waits, and every push runs the suite in **GitHub Actions** with headless Chromium.
+
+> *Same scenarios as the Selenium edition — about three times faster.*
+
+</td>
+<td width="50%" valign="top">
+
+**📍 Quick facts**
+
+| | |
+|---|---|
+| 🧪 **Scenarios** | 15 in 7 feature files |
+| ✅ **CI** | 15 / 15 · headless Chromium · 86 s |
+| 🧵 **Driver** | `ThreadLocal` Playwright / Browser / Context / Page |
+| 📸 **On failure** | Full-page screenshot + page HTML |
+| ⚙️ **Config** | `src/test/resources/config.properties` |
+
+</td>
+</tr>
+</table>
+
+---
+
+## ✅ Latest Results
+
+| Feature file | Scenarios | Result |
+|---|---:|---|
+| 🔐 `Login.feature` | 2 | ![passed](https://img.shields.io/badge/-2%20passed-22c55e?style=flat-square) |
+| 🚪 `Logout.feature` | 1 | ![passed](https://img.shields.io/badge/-1%20passed-22c55e?style=flat-square) |
+| 📝 `Registration.feature` | 2 | ![passed](https://img.shields.io/badge/-2%20passed-22c55e?style=flat-square) |
+| 🔑 `ForgotPassword.feature` | 2 | ![passed](https://img.shields.io/badge/-2%20passed-22c55e?style=flat-square) |
+| 🛒 `CartCheckout.feature` | 2 | ![passed](https://img.shields.io/badge/-2%20passed-22c55e?style=flat-square) |
+| 🔄 `RegressionTests.feature` | 3 | ![passed](https://img.shields.io/badge/-3%20passed-22c55e?style=flat-square) |
+| 💨 `SmokeTests.feature` | 3 | ![passed](https://img.shields.io/badge/-3%20passed-22c55e?style=flat-square) |
+| **Total** | **15** | **100 % · 86 s** |
+
+<sub>GitHub Actions, Ubuntu 24.04, Temurin 17, headless Chromium ([workflow](.github/workflows/tests.yml)). The earlier local run in [QaBrainAutomarionPlaywrightCucumber.pdf](QaBrainAutomarionPlaywrightCucumber.pdf) shows 14 / 15.</sub>
+
+---
+
+## 🎯 Test Coverage
+
+<details open>
+<summary><strong>🔐 Authentication</strong></summary>
+
+<br>
+
+| Feature | Scenarios |
+|---|---|
+| Login | Valid credentials · invalid credentials show *"Your email and password both are invalid!"* |
+| Logout | A logged-in user logs out and the login form returns |
+| Registration | Register with a valid e-mail · the browser rejects an e-mail without `@` |
+| Forgot Password | Reset for a registered e-mail · a malformed e-mail is rejected (*"missing an '@'"*) |
+
+</details>
+
+<details>
+<summary><strong>🛒 E-commerce demo</strong></summary>
+
+<br>
+
+All shop scenarios first log in at `/ecommerce/login` with the public practice account.
+
+| Scenario | Check |
+|---|---|
+| Add product to cart | The product's button turns into *Remove from cart* |
+| Remove product from cart | Nothing is left marked *Remove from cart* |
+| R-01 Add multiple products | 3 added → 3 in the cart |
+| R-02 Product details | Details page shows the product name and price |
+| R-03 Product cards | Every card has a name, a price and an *Add to cart* button |
+
+</details>
+
+<details>
+<summary><strong>💨 Smoke</strong></summary>
+
+<br>
+
+| Scenario | Check |
+|---|---|
+| S-01 | Home page loads |
+| S-02 | Registration, Forgot Password, Form Submission and Drag and Drop List open from the sidebar |
+| S-03 | The E-Commerce demo site opens from the menu |
+
+</details>
+
+---
+
+## 🏗️ Framework Architecture
+
+```mermaid
+flowchart LR
+  F["Feature files<br/>(Gherkin)"] --> S["Step definitions<br/>stepdefinitions/"]
+  S --> P["Page Objects<br/>pages/"]
+  P --> PW["Playwright<br/>auto-waiting locators"]
+  PW --> C["Chromium<br/>(headless in CI)"]
+  C --> Q["practice.qabrains.com"]
+  H["Hooks"] -.->|"fresh context per scenario ·<br/>screenshot + HTML on failure"| DF["DriverFactory<br/>ThreadLocal"]
+  DF --> PW
+  CF["ConfigReader<br/>config.properties + -D"] -.-> S
+```
+
+- **Thread-safe driver** — `DriverFactory` keeps one Playwright, Browser, BrowserContext and Page per thread
+- **Auto-waiting** — locators wait for elements; the shop waits for each cart click to change the product's state
+- **Robust navigation** — the menu's ids change on every load, so pages open by URL or by visible label, and new tabs are detected
+- **Browser validation** — e-mail errors are read from the field's own `validationMessage`
+- **Config, not code** — URL, timeout, headless and the public practice accounts live in `config.properties`; `-Dkey=value` overrides any of them
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Version |
+|---|---|---|
+| Language | Java | 17 |
+| Browser automation | Playwright for Java (Chromium) | 1.53.0 |
+| BDD | Cucumber JVM (Gherkin) | 7.15.0 |
+| Runner | TestNG (`cucumber-testng`) | 7.9.0 |
+| Build | Maven (Surefire 3.2.5) | — |
+| Reporting | Cucumber HTML / JSON / JUnit XML | — |
+| CI | GitHub Actions (Ubuntu 24.04) | — |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-qaBrainsAutomation-Java-Playwright/
-│
+QaBrainsAutomationJavaPlaywright/
+├── .github/workflows/tests.yml        ← install Chromium, run headless on every push
 ├── src/test/java/
-│   ├── hooks/                     ← @Before / @After lifecycle management
-│   │   └── Hooks.java
-│   ├── pages/                     ← Page Object Model classes
-│   │   ├── LoginPage.java
-│   │   ├── LogoutPage.java
-│   │   ├── CartPage.java
-│   │   ├── RegistrationPage.java
-│   │   ├── ForgotPasswordPage.java
-│   │   ├── HomePage.java
-│   │   └── SearchPage.java
-│   ├── stepdefinitions/           ← Cucumber step definitions
-│   │   ├── CommonSteps.java
-│   │   ├── LoginSteps.java
-│   │   ├── LogoutSteps.java
-│   │   ├── CartSteps.java
-│   │   ├── RegistrationSteps.java
-│   │   ├── ForgotPasswordSteps.java
-│   │   ├── SmokeSteps.java
-│   │   └── RegressionSteps.java
-│   ├── runners/                   ← TestNG test runner
-│   │   └── TestRunner.java
-│   └── utils/                     ← Core utilities
-│       ├── BaseTest.java          ← Browser lifecycle management
-│       ├── DriverFactory.java     ← Thread-safe WebDriver factory
-│       ├── DriverHelper.java      ← Shared driver utilities
-│       └── ConfigReader.java      ← config.properties reader
-│
+│   ├── hooks/Hooks.java               ← fresh browser per scenario, failure evidence
+│   ├── pages/                         ← Login, Logout, Registration, ForgotPassword, Ecommerce
+│   ├── stepdefinitions/               ← Common, Auth, Registration, ForgotPassword, Shop
+│   ├── runners/TestRunner.java        ← @smoke or @regression
+│   └── utils/
+│       ├── DriverFactory.java         ← ThreadLocal Playwright objects, headless switch
+│       ├── ConfigReader.java          ← classpath config + -D overrides
+│       └── BaseTest.java              ← compatibility wrapper
 ├── src/test/resources/
-│   ├── features/                  ← Gherkin BDD feature files
-│   │   ├── Login.feature
-│   │   ├── Logout.feature
-│   │   ├── CartCheckout.feature
-│   │   ├── Registration.feature
-│   │   ├── ForgotPassword.feature
-│   │   ├── SmokeTests.feature
-│   │   └── RegressionTests.feature
-│   └── config/
-│       └── config.properties      ← URL, credentials, browser settings
-│
-├── reports/                       ← Generated test reports & screenshots
-│   ├── allure-results/
-│   ├── cucumber-reports/
-│   └── screenshots/
-│
-├── pom.xml                        ← Maven dependencies & plugins
-├── testng.xml                     ← TestNG suite configuration
-├── Jenkinsfile                    ← CI/CD pipeline definition
-└── README.md
+│   ├── config.properties
+│   └── features/                      ← 7 feature files, 15 scenarios
+├── testng.xml
+└── pom.xml
 ```
 
 ---
 
-## ✨ Framework Features
+## ⚙️ Getting Started
 
-| Feature | Implementation |
-|---------|---------------|
-| ✅ BDD with Cucumber | Gherkin scenarios — readable by developers, QA, and business stakeholders |
-| ✅ Page Object Model | Each page encapsulates its own locators and actions |
-| ✅ Thread-safe Driver | `DriverFactory` uses `ThreadLocal<Page>` for parallel-safe execution |
-| ✅ Screenshot on Failure | Auto-captured in `@After` hook for every failed scenario |
-| ✅ Configurable | `config.properties` controls URL, browser, headless mode, timeouts |
-| ✅ CI/CD Ready | Jenkins + GitHub Actions + AWS Pipeline support |
-| ✅ Allure Reports | Rich HTML reports with steps, screenshots, and trend history |
-| ✅ Known Issue Handling | `@known_issue` tag skips broken site components gracefully |
-| ✅ Detailed Logging | Console output with step-level success/failure indicators |
+**Prerequisites:** JDK 17+ · Maven 3.8+
 
----
-
-## 🎯 Test Coverage
-
-### 🔐 Authentication
-- Valid login with correct credentials
-- Invalid login — error message validation
-- Session verification post-login
-
-### 🛒 Cart & Checkout
-- Add product to cart
-- Remove product from cart
-- Cart empty state verification
-- Checkout flow navigation
-
-### 📝 User Registration
-- Successful registration with valid unique email
-- Email format validation (HTML5 + inline errors)
-- Duplicate email handling
-
-### 🔑 Forgot Password
-- Password reset with registered email
-- Error handling for unregistered email
-
-### 🚀 Smoke Tests
-- Home page load verification
-- Navigation link validation (Catalog, About, Blog)
-- Wishlist and Refer-a-Friend page access
-
-### 🔄 Regression Tests
-- Cart quantity updates
-- Invalid search — no result display
-- Multi-product cart operations
-
----
-
-## ✅ Prerequisites
-
-- ✅ **JDK 11 or higher** — configured in PATH
-- ✅ **Maven 3.8+** — installed and configured
-- ✅ **IDE** — IntelliJ IDEA or Eclipse
-- ✅ **Allure CLI** — for generating Allure reports (`brew install allure` on Mac)
-- ✅ **Git** — for version control
-
----
-
-## ⚙️ Installation & Setup
-
-**1. Clone the repository:**
 ```bash
-git clone https://github.com/ranajitchowdhury/qaBrainsAutomation-Java-Playwright.git
-cd qaBrainsAutomation-Java-Playwright
+git clone https://github.com/rbchy/QaBrainsAutomationJavaPlaywright.git
+cd QaBrainsAutomationJavaPlaywright
+
+# one-time: download Chromium for Playwright
+mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium"
+
+mvn clean test                                   # all @smoke or @regression scenarios
+mvn clean test -Dheadless=true                   # what CI runs
+mvn clean test -Dcucumber.filter.tags="@Cart"    # one area
 ```
 
-**2. Install dependencies:**
-```bash
-mvn clean install -DskipTests
-```
-
-**3. Install Playwright browsers:**
-```bash
-mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install chromium"
-```
-
-**4. Configure test settings in `src/test/resources/config/config.properties`:**
-```properties
-url=https://practice.qabrains.com/
-browser=chromium
-headless=false
-timeout=30000
-valid_email=qa_testers@qabrains.com
-valid_password=Password123
-```
+| Report | Location |
+|---|---|
+| Cucumber HTML | `target/cucumber-reports/cucumber.html` |
+| JSON · JUnit XML | `target/cucumber-reports/` |
+| Failure screenshots + page HTML | `target/screenshots/` and inside the HTML report |
 
 ---
 
-## ▶️ Running Tests
+## 🧹 Maintenance Log
 
-### Run all tests
-```bash
-mvn clean test
-```
-
-### Run with specific TestNG suite
-```bash
-mvn test -DsuiteXmlFile=testng.xml
-```
-
-### Run by Cucumber tag
-```bash
-# Smoke tests
-mvn test -Dcucumber.filter.tags="@smoke"
-
-# Regression tests
-mvn test -Dcucumber.filter.tags="@regression"
-
-# Login only
-mvn test -Dcucumber.filter.tags="@Login"
-
-# Exclude known issues
-mvn test -Dcucumber.filter.tags="not @known_issue"
-```
-
-### Run in headless mode (for CI/CD)
-```bash
-mvn test -Dheadless=true
-```
+| Change | Why |
+|---|---|
+| Added `pom.xml`, runner, `testng.xml`, 5 page objects and 5 step-definition classes | Only utilities, hooks and features had reached GitHub — the project could not build or run |
+| Cart, smoke and regression scenarios rewritten for the site's real e-commerce demo and menu | The old ones (catalog, blog, wishlist, search, quantity) belong to another shop |
+| Forgot Password expects the browser's real message (*"missing an '@'"*) | *"Please enter a valid email address"* is never shown |
+| `ConfigReader` reads from the classpath | It pointed at `config/config.properties`, which does not exist |
+| `DriverFactory` is the single, thread-safe driver; `DriverHelper` removed | Three classes each kept their own static browser |
+| Headless switch, screenshot + HTML on failure, GitHub Actions | Every push is checked; failures explain themselves |
+| CI pinned to Ubuntu 24.04 | Playwright 1.53 does not install Chromium on Ubuntu 26.04 yet |
 
 ---
 
-## 📊 Reports
+## 📈 Roadmap
 
-### Allure Report
-```bash
-# Generate and open
-mvn allure:serve
-
-# Or generate static
-mvn allure:report
-open target/allure-report/index.html
-```
-
-### Cucumber HTML Report
-```
-target/cucumber-reports/cucumber.html
-```
-
-### TestNG Report
-```
-target/surefire-reports/index.html
-```
+- [x] Complete, runnable framework with GitHub Actions
+- [ ] Firefox and WebKit in a CI browser matrix
+- [ ] Playwright traces attached on failure
+- [ ] Parallel scenarios through the `ThreadLocal` driver
+- [ ] Form Submission and Drag and Drop scenarios
 
 ---
 
-## 🔄 CI/CD Integration
+## 🔗 Related Projects
 
-### Jenkins Pipeline
+| Project | Stack |
+|---|---|
+| 🧪 [QA Brains — Java + Selenium](https://github.com/rbchy/QaBrainsAutomationJavaSelenium) | Same 15 scenarios on Selenium 4 — CI green |
+| 🔌 [API — Rest Assured](https://github.com/rbchy/QaBrainsAPIAutomationRestAssured) | Same site's UI plus a Rest Assured API pack — CI green |
+| 🔌 [API — Postman / Newman](https://github.com/rbchy/QaBrainsAPIAutomation_Postman) | Postman · Newman — CI green |
+| ⭐ [RbcTcsWorld E-Commerce Suite](https://github.com/rbchy/RbcTcsWorld_ECommerceSuite) | Spring Boot · Playwright (TypeScript) · Selenium · CI quality gates |
 
-```groovy
-pipeline {
-    agent any
-
-    tools {
-        maven 'Maven 3.8'
-        jdk 'JDK 11'
-    }
-
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/ranajitchowdhury/qaBrainsAutomation-Java-Playwright.git'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'mvn clean install -DskipTests'
-            }
-        }
-
-        stage('Execute Tests') {
-            steps {
-                sh 'mvn test -Dheadless=true -Dcucumber.filter.tags="@smoke or @regression"'
-            }
-        }
-
-        stage('Publish Allure Report') {
-            steps {
-                allure([
-                    includeProperties: false,
-                    jdk: '',
-                    results: [[path: 'target/allure-results']]
-                ])
-            }
-        }
-    }
-
-    post {
-        always {
-            cucumber buildStatus: 'UNSTABLE',
-                     fileIncludePattern: '**/cucumber.json',
-                     reportTitle: 'QA Brains Test Report'
-        }
-        failure {
-            emailext(
-                subject: "❌ Build FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "Test execution failed. Check Allure report: ${env.BUILD_URL}allure",
-                to: 'chyranajit@gmail.com'
-            )
-        }
-        success {
-            emailext(
-                subject: "✅ Build PASSED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "All tests passed. Allure report: ${env.BUILD_URL}allure",
-                to: 'chyranajit@gmail.com'
-            )
-        }
-    }
-}
-```
-
-### GitHub Actions
-
-```yaml
-name: QA Brains Automation
-
-on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main]
-  schedule:
-    - cron: '0 9 * * 1-5'   # Mon–Fri 9 AM UTC
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-
-      - name: Install dependencies
-        run: mvn clean install -DskipTests
-
-      - name: Install Playwright browsers
-        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install chromium"
-
-      - name: Run Smoke Tests
-        run: mvn test -Dheadless=true -Dcucumber.filter.tags="@smoke"
-
-      - name: Run Regression Tests
-        run: mvn test -Dheadless=true -Dcucumber.filter.tags="@regression"
-
-      - name: Generate Allure Report
-        run: mvn allure:report
-
-      - name: Upload Allure Results
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: allure-report
-          path: target/allure-report/
-```
-
-### AWS Pipeline
-```
-CodeCommit → CodeBuild → Execute Tests → Allure S3 Report → SNS Email Notification
-```
-
----
-
-## 📸 Screenshot & Failure Handling
-
-The framework automatically handles failures with the following:
-
-```java
-// Hooks.java — auto screenshot on failure
-@After
-public void tearDown(Scenario scenario) {
-    if (scenario.isFailed()) {
-        String name = scenario.getName().replaceAll("\\s+", "_");
-        byte[] screenshot = ((Page) BaseTest.getPage())
-            .screenshot(new Page.ScreenshotOptions().setFullPage(true));
-        scenario.attach(screenshot, "image/png", "FAILED_" + name);
-    }
-    BaseTest.quitBrowser();
-}
-```
-
-- 📸 Full-page screenshot captured on every failure
-- 📋 Screenshot embedded in Cucumber HTML and Allure reports
-- 🔍 Detailed step-level logging with ✅ / ❌ indicators
-- 🗂️ Screenshots saved to `reports/screenshots/FAILED_<ScenarioName>.png`
-
----
-
-## 🏷️ Tags
-
-| Tag | Description |
-|-----|-------------|
-| `@smoke` | Critical path — fast build verification |
-| `@regression` | Full regression suite |
-| `@Login` | Login scenarios only |
-| `@Logout` | Logout scenarios only |
-| `@Registration` | Registration flow |
-| `@ForgotPassword` | Password reset flow |
-| `@CartCheckout` | Cart and checkout flow |
-| `@known_issue` | Known site defects — skipped gracefully as Pending |
-
----
-
-## 🏗️ Framework Architecture
-
-```
-Feature Files (Gherkin)
-        ↓
-Step Definitions (stepdefinitions/)
-        ↓
-Page Object Model (pages/)
-        ↓
-BaseTest / DriverFactory (utils/)
-        ↓
-Playwright → Chromium Browser
-        ↓
-Application: practice.qabrains.com
-        ↓
-Allure + Cucumber Reports
-        ↓
-Jenkins / GitHub Actions / AWS Pipeline
-```
-
-### Senior QA Design Decisions
-
-- **`ThreadLocal<Page>`** in `DriverFactory` ensures thread-safe parallel execution
-- **`@known_issue` tag** skips broken site components as Pending — no false failures in CI
-- **`ConfigReader`** externalizes all config from code — environment-independent execution
-- **Hooks centralised** — single `@Before`/`@After` source of truth prevents duplicate browser opens
-- **Soft assertions** used where appropriate — full scenario execution even on partial failures
-
----
-
-## 📈 Future Enhancements
-
-- [ ] Docker containerization — `docker-compose` for isolated test execution
-- [ ] Parallel execution — TestNG `parallel="scenarios"` configuration
-- [ ] BrowserStack integration — mobile and cross-browser cloud testing
-- [ ] Database validation — JDBC-based backend assertion layer
-- [ ] REST Assured API testing — backend contract validation alongside UI tests
-- [ ] AI-assisted test generation — auto-generate step definitions from feature files
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your branch: `git checkout -b feature/improvement`
-3. Write your tests following the existing POM structure
-4. Run `mvn test` to verify nothing breaks
-5. Commit: `git commit -m 'Add improvement'`
-6. Push and open a Pull Request
-
----
-
-## 📄 License
-
-This project is open-source under the **MIT License**.
-
----
-
-## 🌟 Why This Framework?
-
-| Strength | Detail |
-|----------|--------|
-| ✅ Industry-standard architecture | POM + BDD + Hooks — aligned with enterprise QA standards |
-| ✅ Easy maintenance | Page classes isolate locators — change one place, fix everywhere |
-| ✅ Scalable design | Add new features by adding one Page class + one Steps class |
-| ✅ Readable test cases | Gherkin scenarios understood by developers, QA, and product managers |
-| ✅ Fast execution | Playwright is 2–3x faster than Selenium for most test scenarios |
-| ✅ CI/CD compatible | Jenkins, GitHub Actions, and AWS Pipeline examples included |
-| ✅ Enterprise-ready | Thread-safe, configurable, reportable, and cloud-executable |
+<sub>All projects: [github.com/rbchy](https://github.com/rbchy)</sub>
 
 ---
 
 ## 👤 Author
 
-**Ranajit Baran Chowdhury**
-Software Developer & QA Automation Engineer
-- 📧 Email: chyranajit@gmail.com
-- 🐙 GitHub: [@ranajitchowdhury](https://github.com/ranajitchowdhury)
-- 🌐 Portfolio: [rbc6543.wixsite.com/rbc-portfolio](https://rbc6543.wixsite.com/rbc-portfolio)
-- 💼 LinkedIn: [linkedin.com/in/ranajitchowdhury](https://linkedin.com/in/ranajitchowdhury)
+<div align="center">
 
----
+**Ranajit Baran Chowdhury (RB Chowdhury)**
+QA Automation Engineer / SDET · West Norriton, Pennsylvania, USA
 
-**Version:** 1.0.0 | **Last Updated:** May 2026
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rbchy/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rbchy)
+[![Website](https://img.shields.io/badge/Website-rbchy.github.io%2Frbchy-0d9488?style=for-the-badge&logo=githubpages&logoColor=white)](https://rbchy.github.io/rbchy/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Website-blueviolet?style=for-the-badge&logo=wix&logoColor=white)](https://rbc6543.wixsite.com/rbc-portfolio)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chyranajit@gmail.com)
+
+<sub>Licensed under MIT. QA Brains is a public practice site; only its published practice accounts are used.</sub>
+
+⭐ *If this framework helps you, a star on the repo is appreciated.*
+
+</div>
