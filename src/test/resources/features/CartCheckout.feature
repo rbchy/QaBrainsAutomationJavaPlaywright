@@ -1,17 +1,17 @@
 Feature: Cart Functionality
-  As a user
-  I want to manage products in the cart
-  So that I can complete my purchase smoothly
+  As a shopper on the QA Brains e-commerce demo
+  I want to add and remove products from my cart
+  So that I can purchase the products I need
 
   Background:
-    Given User launches the application
+    Given User is logged in to the e-commerce site
 
-  @smoke @regression
+  @smoke @regression @Cart
   Scenario: Add product to cart
     When User adds products to cart
     Then Product should appear in cart
 
-  @smoke @regression
+  @smoke @regression @Cart
   Scenario: Remove product from cart
     When User adds products to cart
     And User removes product from cart
